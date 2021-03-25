@@ -7,5 +7,5 @@ setopt interactivecomments
 
 eval "$(starship init zsh)"
 
-source $DOTFILES/scripts/alias.sh
-source $DOTFILES/scripts/input-method.sh
+source $DOTFILES/scripts/setup-alias.sh
+source $DOTFILES/scripts/setup-ibus-engine.sh
