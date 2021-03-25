@@ -1,7 +1,7 @@
 # Set the modifier key to Super
 set $mod Mod4
 
-# Navigation {{{1
+# Navigation
 
 # Move the focus around with arrow keys
 bindsym $mod+Left focus left
@@ -15,7 +15,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# Workspace {{{1
+# Workspace
 
 # Switch to a workspace
 bindsym $mod+1 workspace number 1
@@ -41,7 +41,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# Layout {{{1
+# Layout
 
 # Split the focused object horizontally or vertically
 bindsym $mod+h splith
@@ -67,7 +67,7 @@ bindsym $mod+a focus parent
 # Flash the focused window
 exec_always --no-startup-id flashfocus
 
-# Lock Screen {{{1
+# Lock Screen
 exec swayidle -w \
 timeout 300 'swaylock -f -c 000000' \
 timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
@@ -96,23 +96,13 @@ mode 'resize' {
   bindsym $mod+r mode 'default'
 }
 
-# Taking Screenshots {{{1
-
+# Taking Screenshots
 bindsym --release Print exec grim
 bindsym --release Shift+Print exec grim -g "$(slurp)"
 bindsym --release Control+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
-# Change Language Input {{{1
-
-set $input_method Select an input method: [c]hinese [e]nglish
-bindsym $mod+space mode '$input_method'
-mode '$input_method' {
-  bindsym c exec ibus engine rime; mode 'default'
-  bindsym e exec ibus engine xkb:us::eng; mode 'default'
-  bindsym Return mode 'default'
-  bindsym Escape mode 'default'
-  bindsym $mod+space mode 'default'
-}
+# Change Language Input
+bindsym $mod+i exec $DOTFILES/scripts/toggle-ibus-engine.sh
 
 # Set background picture
 output * background '$DOTFILES/assets/wallpaper.jpg' fill
@@ -142,7 +132,4 @@ bar {
     urgent_workspace #ef596f #ef596f #dcdcdc
   }
 }
-
-# Jetbrains flash screen in floating mode
-for_window [class="jetbrains-*" title="win0|Welcome to *"] floating enable;
 
