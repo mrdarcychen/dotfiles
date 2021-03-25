@@ -1,0 +1,18 @@
+bar {
+  id custom
+  font pango:JetBrainsMono Regular 16
+  position bottom
+  separator_symbol |
+  height 32
+
+  # pango_markup enabled
+  status_command while $DOTFILES/configs/sway/scripts/update-swaybar.sh; do sleep 1; done
+  colors {
+    background #2e3440
+    statusline #dcdcdc
+    focused_workspace #2e3440 #2bbac5 #dcdcdc
+    active_workspace #2e3440 #2e3440 #2bbac5
+    inactive_workspace #2e3440 #2e3440 #dcdcdc50
+    urgent_workspace #ef596f #ef596f #dcdcdc
+  }
+}
