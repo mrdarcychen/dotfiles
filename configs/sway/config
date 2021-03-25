@@ -64,23 +64,6 @@ bindsym $mod+o focus mode_toggle
 # Move focus to the parent container
 bindsym $mod+a focus parent
 
-# Flash the focused window
-exec_always --no-startup-id flashfocus
-
-# Lock Screen
-exec swayidle -w \
-timeout 300 'swaylock -f -c 000000' \
-timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-before-sleep 'swaylock -f -c 000000'
-bindsym $mod+l exec swaylock
-bindsym $mod+Shift+l exec swaynag -t warning -m 'Exit sway?' -b 'Confirm' 'swaymsg exit'
-
-# Open a new terminal
-bindsym $mod+Return exec alacritty
-
-# Launch the menu
-bindsym $mod+m exec ulauncher
-
 # Kill focused window
 bindsym $mod+Shift+q kill
 
@@ -96,40 +79,14 @@ mode 'resize' {
   bindsym $mod+r mode 'default'
 }
 
-# Taking Screenshots
-bindsym --release Print exec grim
-bindsym --release Shift+Print exec grim -g "$(slurp)"
-bindsym --release Control+Shift+Print exec grim -g "$(slurp)" - | wl-copy
-
-# Change Language Input
-bindsym $mod+i exec $DOTFILES/scripts/toggle-ibus-engine.sh
-
-# Set background picture
-output * background '$DOTFILES/assets/wallpaper.jpg' fill
-
 # Hide window title and border
 default_border none
 default_floating_border none
 gaps inner 10
-# Enable gaps only if a workspace has more than one child
 smart_gaps on
 
-bar {
-  id custom
-  font pango:JetBrainsMono Regular 16
-  position bottom
-  separator_symbol |
-  height 30
+# Set background picture
+output * background '$DOTFILES/assets/wallpaper.jpg' fill
 
-  # pango_markup enabled
-  status_command while ~/.config/sway/scripts/swaybar.sh; do sleep 1; done
-  colors {
-    background #2e3440
-    statusline #dcdcdc
-    focused_workspace #2e3440 #2bbac5 #dcdcdc
-    active_workspace #2e3440 #2e3440 #2bbac5
-    inactive_workspace #2e3440 #2e3440 #dcdcdc50
-    urgent_workspace #ef596f #ef596f #dcdcdc
-  }
-}
+include config.d/*
 
