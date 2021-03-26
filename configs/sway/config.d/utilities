@@ -1,6 +1,3 @@
-# Flash the focused window
-exec_always --no-startup-id flashfocus
-
 # Open a new terminal
 bindsym $mod+Return exec alacritty
 
@@ -12,5 +9,4 @@ bindsym --release Print exec grim
 bindsym --release Shift+Print exec grim -g "$(slurp)"
 bindsym --release Control+Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
-# Change Language Input
 bindsym $mod+i exec $DOTFILES/configs/sway/scripts/toggle-ibus-engine.sh

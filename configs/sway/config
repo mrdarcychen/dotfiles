@@ -88,5 +88,6 @@ smart_gaps on
 # Set background picture
 output * background '$DOTFILES/assets/wallpaper.jpg' fill
 
-include config.d/*
+exec $DOTFILES/configs/sway/init.sh
 
+include config.d/*
