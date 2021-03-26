@@ -8,4 +8,3 @@ setopt interactivecomments
 eval "$(starship init zsh)"
 
 source $DOTFILES/scripts/setup-alias.sh
-source $DOTFILES/scripts/setup-ibus-engine.sh
