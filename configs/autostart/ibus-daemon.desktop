@@ -1,3 +1,0 @@
-[Desktop Entry]
-Name=IBus Daemon
-Exec=ibus-daemon -drx
