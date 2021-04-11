@@ -4,9 +4,11 @@ bindsym $mod+Return exec alacritty
 # Launch the menu
 bindsym $mod+m exec ulauncher
 
-# Taking Screenshots
-bindsym --release Print exec grim
-bindsym --release Shift+Print exec grim -g "$(slurp)"
-bindsym --release Control+Shift+Print exec grim -g "$(slurp)" - | wl-copy
+# Screenshot a region and save it as a png file
+bindsym --release Ctrl+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/'screenshot-'$(date +'%s.png')
+# Screenshot a region and copy to clipboard
+bindsym --release Ctrl+Print exec grim -g "$(slurp)" - | wl-copy
+# Screenshot the focused window and copy to clipboard 
+bindsym --release Print exec swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | "\(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"' | grim -g - - | wl-copy
 
 bindsym $mod+i exec $DOTFILES/configs/sway/scripts/toggle-ibus-engine.sh
