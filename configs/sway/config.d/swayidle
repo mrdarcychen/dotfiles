@@ -1,7 +1,0 @@
-# Lock Screen
-exec swayidle -w \
-timeout 300 'swaylock -f -c 000000' \
-timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-before-sleep 'swaylock -f -c 000000'
-bindsym $mod+l exec swaylock
-bindsym $mod+Shift+l exec swaynag -t warning -m 'Exit sway?' -b 'Confirm' 'swaymsg exit'
