@@ -1,0 +1,24 @@
+[alias]
+br = branch -vv
+co = checkout
+cp = cherry-pick
+df = diff --compact-summary
+lg = log --compact-summary
+st = status --short --branch
+
+[color]
+ui = auto
+
+[core]
+editor = nvim
+
+[help]
+autocorrect = 30
+
+[log]
+abbrevCommit = true
+
+[user]
+name = Darcy Chen
+email = mrdarcychen@gmail.com
+

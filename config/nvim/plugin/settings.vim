@@ -16,9 +16,7 @@ set clipboard=unnamedplus
 " Use a dialog when an operation has to be confirmed 
 set confirm
 
-" Hide mode indicator in favor of statusline plugin
-set noshowmode
-
+set backspace=indent,eol,start
 " Highlight the line currently under the cursor
 set cursorline
 
