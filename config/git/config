@@ -1,14 +1,5 @@
-[user]
-name = Darcy Chen
-email = mrdarcychen@gmail.com
-signingKey = 4CF242ACCF85B85C23292E285FAC858A7A609756
-
-[core]
-editor = nvim
-
 [alias]
 br = branch -vv
-cm = commit -m
 co = checkout
 cp = cherry-pick
 df = diff --compact-summary
@@ -18,9 +9,16 @@ st = status --short --branch
 [color]
 ui = auto
 
-[log]
-abbrevCommit = true
+[core]
+editor = nvim
 
 [help]
 autocorrect = 30
+
+[log]
+abbrevCommit = true
+
+[user]
+name = Darcy Chen
+email = mrdarcychen@gmail.com
 
