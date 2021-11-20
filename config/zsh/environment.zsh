@@ -6,3 +6,6 @@ XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
 XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
 XDG_STATE_HOME=${XDG_STATE_HOME:-$HOME/.local/state}
 
+# Disable Apple Terminal's restore shell state feature
+SHELL_SESSIONS_DISABLE=1
+
