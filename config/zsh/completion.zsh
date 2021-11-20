@@ -1,12 +1,15 @@
 # Initialize completion system for current session
-autoload -U compinit; compinit
+autoload -U compinit; compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 
 # Cache completion history
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 
 # Select files and directories from completion menu
 zstyle ':completion:*' menu select
+
+# Match lower-case to upper-case if no case-sensitive matches exist
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Complete options instead of directory stack when using dash on cd
 zstyle ':completion:*' complete-options true

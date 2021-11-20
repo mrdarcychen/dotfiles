@@ -1,8 +1,8 @@
 # Used for setting interactive shell configuration (.zshrc)
 
-HISTFILE=$XDG_DATA_HOME/zsh/.zsh_history
+HISTFILE="$XDG_STATE_HOME"/zsh/history
 HISTSIZE=1000
-SAVEHIST=1000
+SAVEHIST=$HISTSIZE
 
 # Use gpg-agent in place of ssh-agent
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
